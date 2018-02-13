@@ -1,8 +1,8 @@
 FROM debian:stretch-slim
 
-ENV BDB_VERSION="db-4.8.30.NC" \
-    BDB_HASH="12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef" \
-    BDB_DIR="/usr/local/db4"
+ENV BDB_VERSION="db-5.3.28.NC" \
+    BDB_HASH="76a25560d9e52a198d37a31440fd07632b5f1f8f9f2b6d5438f4bc3e7c9013ef" \
+    BDB_DIR="/usr/local/db5"
 
 RUN BDB_FILE=$BDB_VERSION".tar.gz" \
     BDB_URL="http://download.oracle.com/berkeley-db/"$BDB_FILE \
@@ -28,4 +28,4 @@ RUN BDB_FILE=$BDB_VERSION".tar.gz" \
     && rm -rf $BDB_VERSION \
     && export BDB_INCLUDE_PATH="$BDB_DIR/include" \
     && export BDB_LIB_PATH="$BDB_DIR/lib" \
-    && ln -s $BDB_DIR/libdb-4.8.so /usr/lib/libdb-4.8.so
+    && ln -s $BDB_DIR/libdb-5.3.so /usr/lib/libdb-5.3.so
