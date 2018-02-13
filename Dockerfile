@@ -11,7 +11,6 @@ RUN set -xe \
     && apt-get install -y --no-install-recommends \
         g++ \
         make \
-        libdb4.8 \
         libdb++-dev \
         autoconf \
         libtool \
