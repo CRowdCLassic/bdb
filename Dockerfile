@@ -1,10 +1,10 @@
 FROM debian:jessie
 
 ENV BDB_VERSION="db-4.8.30.NC" \
-    BDB_HASH="12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef"
+    BDB_HASH="12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef" \
+    BDB_DIR="/usr/local/db4"
 
-RUN BDB_DIR="/usr/local/db4" \
-    BDB_FILE=$BDB_VERSION".tar.gz" \
+RUN BDB_FILE=$BDB_VERSION".tar.gz" \
     BDB_URL="http://download.oracle.com/berkeley-db/"$BDB_FILE \
     && set -xe \
     && apt-get update -y \
